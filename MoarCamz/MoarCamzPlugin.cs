@@ -395,7 +395,7 @@ namespace MoarCamz
             });
             FOV.onEndEdit.AddListener((s) =>
             {
-                if (int.TryParse(s, out int d))
+                if (float.TryParse(s, out float d))
                 {
                     SetFOV(d);
 #if !KK
@@ -747,7 +747,7 @@ namespace MoarCamz
 
                         if (!FOV.isFocused)
                         {
-                            FOV.text = string.Format("{0}", Studio.Studio.Instance.cameraCtrl.cameraData.parse);
+                            FOV.text = string.Format("{0:F1}", Studio.Studio.Instance.cameraCtrl.cameraData.parse);
                             FOVSlider.value = Studio.Studio.Instance.cameraCtrl.cameraData.parse;
                         }
                         
